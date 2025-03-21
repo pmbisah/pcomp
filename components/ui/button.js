@@ -1,18 +1,21 @@
 import React from "react";
-import { TouchableOpacity, Text } from "react-native";
+import { TouchableOpacity, Text, View } from "react-native";
 
 export const Button = ({ onClick, children }) => {
   return (
-    <TouchableOpacity
-      onPress={onClick}
-      style={{
-        backgroundColor: "#007BFF",
-        padding: 10,
-        borderRadius: 5,
-        alignItems: "center",
-      }}
-    >
-      <Text style={{ color: "white" }}>{children}</Text>
-    </TouchableOpacity>
+    <View style={{ alignItems: "center", marginVertical: 10 }}>
+      <TouchableOpacity
+        onPress={onClick}
+        style={{
+          backgroundColor: "#007BFF",
+          padding: 12,
+          borderRadius: 8,
+          alignItems: "center",
+          width: 150, // Adjust width to make buttons uniform
+        }}
+      >
+        <Text style={{ color: "white", fontSize: 16 }}>{children}</Text>
+      </TouchableOpacity>
+    </View>
   );
 };
